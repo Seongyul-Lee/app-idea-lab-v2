@@ -76,9 +76,25 @@ app-idea-lab/
 
 ### 3단계: PRD 작성 (`/stage-3 NNN-아이디어명`)
 
-채택된 아이디어에 대해 14개 섹션의 PRD(Product Requirements Document)를 작성한다.
+채택된 아이디어에 대해 **15개 섹션**의 PRD(Product Requirements Document)를 작성한다. **작성된 PRD는 Task Master에 투입하여 즉시 개발 작업으로 분해할 수 있는 수준의 상세도를 갖추어야 한다.**
 
-주요 섹션: Executive Summary, Problem Statement, Target Users, User Stories, Functional Requirements(우선순위·AC 포함), Technical Architecture(DB 스키마·API 설계), Monetization Strategy, Risk Matrix, MVP Roadmap, Success Metrics 등.
+| # | 섹션 | 핵심 내용 |
+|---|------|-----------|
+| 1 | Executive Summary | 핵심 가치 제안 |
+| 2 | Problem Statement | 시장분석 기반 pain point |
+| 3 | Target Users & Personas | 사용자 세그먼트, 페르소나 |
+| 4 | User Stories | Epic별 분류, 최소 15개 |
+| 5 | Functional Requirements | P0/P1/P2 우선순위, AC(수용 기준) |
+| 6 | Non-functional Requirements | 성능, 보안, 접근성 |
+| 7 | Technical Architecture | 기술 스택, 시스템 구조도, 오프라인 설계, DB 스키마(SQL), API 설계(TypeScript), 상태관리, 기능-테이블-API 매핑 |
+| 8 | Screen Map & UI 명세 | 네비게이션 트리, 화면별 UI 구성 |
+| 9 | Competitive Differentiation | 차별화 전략 |
+| 10 | Monetization Strategy | 수익 모델 구체화 |
+| 11 | Risk Matrix | 사업·기술·법률·운영 리스크 |
+| 12 | Assumptions & Constraints | 가정, 의존성, 제약 |
+| 13 | Out of Scope | MVP 제외 범위 |
+| 14 | MVP Roadmap | 3개월 주별 마일스톤 |
+| 15 | Success Metrics | 핵심 지표 정의 |
 
 **산출물**: `ideas/NNN-아이디어명-prd.md`
 
@@ -108,9 +124,11 @@ PRD를 4개 영역에서 비판적으로 검증한다.
 
 최종 판정에 따라 산출물을 정리하고 이동한다.
 
-- **채택**: 관련 파일을 `ideas/adopted/`로 이동
+- **채택**: 관련 파일을 `ideas/adopted/`로 이동 → **Task Master 투입 가능 상태**
 - **탈락**: 사용자의 명시적 동의 후 `ideas/rejected/`로 이동, 탈락 사유 기록
 - **보류**: `ideas/` 루트에 유지, 재개 시 2단계부터 재시작
+
+> **참고**: `ideas/adopted/`에 저장된 PRD는 Task Master 등 태스크 분해 도구에 투입하여 별도의 추가 설계 없이 즉시 개발 작업으로 분해할 수 있는 수준이다.
 
 ## 문서 규칙
 
