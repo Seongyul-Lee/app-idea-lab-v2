@@ -38,7 +38,7 @@
 - 아래 "sc:design 호출 지침"에 따라 `sc:design`을 1회 호출한다
 - 출력물을 PRD 섹션 7(Technical Architecture)에 통합한다
 
-### Step 5: 섹션 8~15 작성
+### Step 5: 섹션 8~16 작성
 - sc:design 출력을 섹션 7에 통합한 **직후**, 아래 섹션을 **연속으로** 작성한다
 - **중단하거나 사용자 확인을 기다리지 않는다**
   - 8\. Screen Map & UI 명세
@@ -49,13 +49,14 @@
   - 13\. Out of Scope
   - 14\. MVP Roadmap
   - 15\. Success Metrics
+  - 16\. Glossary (용어 사전)
 
 ### Step 6: 자체 점검
 - 아래 "작성 완료 후 자체 점검" 항목을 **모두** 대조 확인한다
 - 미충족 항목이 있으면 해당 섹션을 보완한 뒤 완료 처리한다
 
 ## PRD 작성 구조
-아래 15개 섹션으로 PRD를 작성한다. 각 섹션에서 2단계 산출물(시장분석·경쟁분석)의 데이터를 근거로 인용한다.
+아래 16개 섹션으로 PRD를 작성한다. 각 섹션에서 2단계 산출물(시장분석·경쟁분석)의 데이터를 근거로 인용한다.
 
 1. **Executive Summary** — 핵심 가치 제안 한 문단
 2. **Problem Statement** — 2단계 시장분석 기반, 구체적 pain point 기술
@@ -88,6 +89,7 @@
 13. **Out of Scope** — MVP에서 명시적으로 제외하는 기능·영역
 14. **MVP Roadmap** — 3개월 일정, 주별 마일스톤
 15. **Success Metrics** — 핵심 지표(사용자/비즈니스/제품) 정의, 측정 방법 명시
+16. **Glossary (용어 사전)** — 도메인 특화 용어와 정의. `용어 — 정의` 형식으로 작성. 최소 10개 이상
 
 ### 기술 설계 제약
 - Expo Managed Workflow + React Native + TypeScript + Supabase(PostgreSQL) 전용
