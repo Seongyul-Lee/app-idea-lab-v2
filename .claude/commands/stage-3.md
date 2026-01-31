@@ -9,14 +9,53 @@
 - `ideas/NNN-아이디어명.md` — 평가 완료 아이디어 문서
 - `research/competitors/NNN-경쟁분석.md` — 경쟁사 분석
 - `research/market-data/NNN-시장분석.md` — 시장 분석
+- `ideas/NNN-아이디어명-review.md` — (3단계 회귀 시) 4단계 판별 보고서
+- `ideas/NNN-아이디어명-prd.md` — (3단계 회귀 시) 기존 PRD 문서
 
 ## 사용 도구
 | 도구 | 역할 |
 |------|------|
 | Skill: `sc:design` | Technical Architecture 섹션(시스템 구조, DB 스키마, API 설계, 오프라인 설계) 작성 |
 
+## 실행 워크플로우
+아래 단계를 순서대로 **모두** 실행한다. 어떤 단계도 생략하지 않는다.
+
+### Step 1: 입력 문서 읽기
+- 입력 섹션의 모든 파일을 읽는다 (존재하지 않는 파일은 건너뛴다)
+- `ideas/NNN-아이디어명-review.md`가 존재하면 **반드시** 읽고, 수정 지침(수정 대상·결함 내용·수정 방향)을 파악한다
+
+### Step 2: 회귀 여부 판단
+- **review 파일이 존재하고 "3단계 회귀" 판정인 경우 → 기존 PRD 수정 모드**
+  - 기존 `ideas/NNN-아이디어명-prd.md`를 읽는다
+  - review 보고서의 수정 지침에 해당하는 섹션만 수정·보완한다
+  - 수정 완료 후 **Step 6(자체 점검)으로 이동**한다
+- **review 파일이 없는 경우 → 신규 작성 모드** (Step 3부터 순서대로 진행)
+
+### Step 3: 섹션 1~6 작성
+- 아래 "PRD 작성 구조"의 섹션 1~6을 작성한다
+
+### Step 4: sc:design 호출 → 섹션 7 작성
+- 아래 "sc:design 호출 지침"에 따라 `sc:design`을 1회 호출한다
+- 출력물을 PRD 섹션 7(Technical Architecture)에 통합한다
+
+### Step 5: 섹션 8~15 작성
+- sc:design 출력을 섹션 7에 통합한 **직후**, 아래 섹션을 **연속으로** 작성한다
+- **중단하거나 사용자 확인을 기다리지 않는다**
+  - 8\. Screen Map & UI 명세
+  - 9\. Competitive Differentiation
+  - 10\. Monetization Strategy
+  - 11\. Risk Matrix
+  - 12\. Assumptions & Constraints
+  - 13\. Out of Scope
+  - 14\. MVP Roadmap
+  - 15\. Success Metrics
+
+### Step 6: 자체 점검
+- 아래 "작성 완료 후 자체 점검" 항목을 **모두** 대조 확인한다
+- 미충족 항목이 있으면 해당 섹션을 보완한 뒤 완료 처리한다
+
 ## PRD 작성 구조
-입력 문서를 모두 읽은 뒤, 아래 15개 섹션으로 PRD를 작성한다. 각 섹션에서 2단계 산출물(시장분석·경쟁분석)의 데이터를 근거로 인용한다.
+아래 15개 섹션으로 PRD를 작성한다. 각 섹션에서 2단계 산출물(시장분석·경쟁분석)의 데이터를 근거로 인용한다.
 
 1. **Executive Summary** — 핵심 가치 제안 한 문단
 2. **Problem Statement** — 2단계 시장분석 기반, 구체적 pain point 기술
