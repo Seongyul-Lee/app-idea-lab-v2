@@ -1,142 +1,169 @@
+<a id="readme-top"></a>
+
 # App Idea Lab
 
-한국 시장 타겟 1인 개발 모바일 앱 아이디어를 발굴하고 평가하는 프로젝트.
+한국 시장 타겟 1인 개발 모바일 앱 아이디어를 발굴하고, 평가하고, PRD로 정제하는 문서 기반 워크플로우 프로젝트.
 
-코드 개발을 하지 않으며, **아이디어 발굴 → 평가 → PRD 작성 → 검증·판정**의 4단계 워크플로우를 수행한다.
+<!-- TABLE OF CONTENTS -->
+<details>
+  <summary>목차</summary>
+  <ol>
+    <li><a href="#프로젝트-소개">프로젝트 소개</a></li>
+    <li><a href="#워크플로우">워크플로우</a></li>
+    <li><a href="#프로젝트-구조">프로젝트 구조</a></li>
+    <li><a href="#시작하기">시작하기</a></li>
+    <li><a href="#사용법">사용법</a></li>
+    <li><a href="#기술-스택-제약">기술 스택 제약</a></li>
+    <li><a href="#평가-기준">평가 기준</a></li>
+    <li><a href="#연관-프로젝트">연관 프로젝트</a></li>
+  </ol>
+</details>
 
-## 기술 스택 제약
+## 프로젝트 소개
 
-모든 아이디어는 아래 스택으로 1인 개발 가능해야 한다.
+이 프로젝트는 **코드 개발을 하지 않는다.** 앱 아이디어의 발굴부터 PRD 검증까지 4단계 파이프라인을 통해, 즉시 개발 착수 가능한 수준의 PRD 문서를 산출하는 것이 목표다.
 
-- React Native + TypeScript
-- Supabase (PostgreSQL)
-- 외부 파트너십 없이 혼자 구현 가능
+**핵심 원칙:**
+- 1인 개발자가 1-3개월 내 MVP 출시 가능한 아이디어만 대상
+- 한국 로컬 시장의 실제 pain point 해결에 집중
+- 채택된 PRD는 Task Master에 투입하여 별도 설계 없이 개발 태스크로 분해 가능해야 함
 
-## 제외 기준
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-아래에 해당하는 아이디어는 조사 대상에서 제외한다.
+## 워크플로우
 
-- 법적 인허가가 필수이거나 규제가 까다로운 영역 (의료, 금융 등)
-- 기업/기관과의 협약이 필수인 아이디어
-- 1인 개발로 구현이 불가능한 아이디어
+4단계 파이프라인으로 운영되며, 각 단계는 Claude Code 슬래시 커맨드로 실행한다.
+
+| 단계 | 커맨드 | 설명 | 산출물 |
+|:---:|---|---|---|
+| 1 | `/stage-1` | 아이디어 발굴 | `NNN-아이디어명.md` |
+| 2 | `/stage-2` | 사업성/기술/경쟁력 평가 | 시장분석, 경쟁분석 문서 |
+| 3 | `/stage-3` | PRD 문서 작성 | `NNN-아이디어명-prd.md` |
+| 4 | `/stage-4` | PRD 정합성 판별 | `NNN-아이디어명-review.md` + 채택/탈락 판정 |
+
+**판정 결과:**
+- 채택 → `ideas/adopted/`
+- 탈락 → `ideas/rejected/` (사유 기록 필수)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 프로젝트 구조
 
 ```
 app-idea-lab/
 ├── .claude/
-│   └── commands/          # 4단계 Stage 스킬
-│       ├── stage-1.md     # 아이디어 발굴
-│       ├── stage-2.md     # 사업성/기술/경쟁력 평가
-│       ├── stage-3.md     # PRD 작성
-│       └── stage-4.md     # PRD 정합성 판별 + 판정 결과 처리
-├── evaluation/
-│   └── criteria.md        # 평가 점수 체계 및 판정 기준
+│   └── commands/           # 슬래시 커맨드 (stage-1 ~ stage-4)
 ├── ideas/
-│   ├── _template.md       # 아이디어 문서 템플릿
-│   ├── adopted/           # 채택된 아이디어
-│   └── rejected/          # 탈락된 아이디어
-└── research/
-    ├── competitors/       # 경쟁사 분석
-    └── market-data/       # 시장 분석
+│   ├── _template.md        # 아이디어 카드 템플릿
+│   ├── adopted/            # 채택된 아이디어 + PRD + 리뷰
+│   └── rejected/           # 탈락된 아이디어
+├── research/
+│   ├── competitors/        # 경쟁 분석 문서
+│   └── market-data/        # 시장 분석 문서
+├── evaluation/
+│   └── criteria.md         # 평가 기준
+├── CLAUDE.md               # 프로젝트 지침
+└── README.md
 ```
 
-## 워크플로우
+### 파일명 규칙
 
-### 1단계: 아이디어 발굴 (`/stage-1`)
+| 유형 | 형식 | 예시 |
+|---|---|---|
+| 아이디어 카드 | `NNN-아이디어명.md` | `009-복약케어.md` |
+| PRD | `NNN-아이디어명-prd.md` | `009-복약케어-prd.md` |
+| 리뷰 | `NNN-아이디어명-review.md` | `009-복약케어-review.md` |
 
-한국 시장의 실제 pain point를 기반으로 아이디어를 도출한다.
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-- 네이버 블로그/카페/커뮤니티에서 사용자 불만·수요 수집
-- 글로벌 트렌드 및 해외 유사 앱 탐색
-- 제외 기준 사전 필터링 후 아이디어 초안 작성
+## 시작하기
 
-**산출물**: `ideas/NNN-아이디어명.md`
+### 사전 요구사항
 
-### 2단계: 사업성/기술/경쟁력 평가 (`/stage-2 NNN-아이디어명`)
+- [Claude Code](https://docs.anthropic.com/en/docs/claude-code) CLI 설치
 
-6개 항목을 정량 평가(각 1~5점, 총 30점)하여 채택/보류/탈락을 판정한다.
+### 설치
 
-| 항목 | 기준 |
-|------|------|
-| MVP 출시 가능성 | 1~3개월 내 출시 가능 여부 |
-| Pain Point 명확성 | 커뮤니티 언급 빈도, 수요 근거 |
-| 기술 스택 적합성 | RN + Supabase로 구현 가능 정도 |
-| 시장 규모 | 타겟 사용자 규모 |
-| 경쟁 강도 | 기존 경쟁자 수준 및 차별화 가능성 |
-| 수익 모델 명확성 | 수익화 경로의 구체성 |
+```sh
+git clone <repo-url> ~/app-idea-lab
+cd ~/app-idea-lab
+```
 
-**판정 기준**:
-- **24~30점**: 채택 → 3단계 진행
-- **18~23점**: 보류 → 추가 조사 후 재평가
-- **~17점**: 탈락 → 탈락 처리 (사용자 동의 필수)
+별도의 의존성 설치는 필요 없다. Claude Code 세션에서 슬래시 커맨드를 실행하면 된다.
 
-**산출물**: 아이디어 문서에 점수 기입, `research/competitors/NNN-경쟁분석.md`, `research/market-data/NNN-시장분석.md`
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-### 3단계: PRD 작성 (`/stage-3 NNN-아이디어명`)
+## 사용법
 
-채택된 아이디어에 대해 **15개 섹션**의 PRD(Product Requirements Document)를 작성한다. **작성된 PRD는 Task Master에 투입하여 즉시 개발 작업으로 분해할 수 있는 수준의 상세도를 갖추어야 한다.**
+Claude Code에서 프로젝트를 열고 슬래시 커맨드를 실행한다.
 
-| # | 섹션 | 핵심 내용 |
-|---|------|-----------|
-| 1 | Executive Summary | 핵심 가치 제안 |
-| 2 | Problem Statement | 시장분석 기반 pain point |
-| 3 | Target Users & Personas | 사용자 세그먼트, 페르소나 |
-| 4 | User Stories | Epic별 분류, 최소 15개 |
-| 5 | Functional Requirements | P0/P1/P2 우선순위, AC(수용 기준) |
-| 6 | Non-functional Requirements | 성능, 보안, 접근성 |
-| 7 | Technical Architecture | 기술 스택, 시스템 구조도, 오프라인 설계, DB 스키마(SQL), API 설계(TypeScript), 상태관리, 기능-테이블-API 매핑 |
-| 8 | Screen Map & UI 명세 | 네비게이션 트리, 화면별 UI 구성 |
-| 9 | Competitive Differentiation | 차별화 전략 |
-| 10 | Monetization Strategy | 수익 모델 구체화 |
-| 11 | Risk Matrix | 사업·기술·법률·운영 리스크 |
-| 12 | Assumptions & Constraints | 가정, 의존성, 제약 |
-| 13 | Out of Scope | MVP 제외 범위 |
-| 14 | MVP Roadmap | 3개월 주별 마일스톤 |
-| 15 | Success Metrics | 핵심 지표 정의 |
+```
+# 1단계: 새 아이디어 발굴
+/stage-1
 
-**산출물**: `ideas/NNN-아이디어명-prd.md`
+# 2단계: 아이디어 평가
+/stage-2
 
-### 4단계: PRD 정합성 판별 (`/stage-4 NNN-아이디어명`)
+# 3단계: PRD 작성
+/stage-3
 
-PRD를 4개 영역에서 비판적으로 검증한다.
+# 4단계: PRD 정합성 검증 및 판정
+/stage-4
+```
 
-| 영역 | 검증 내용 |
-|------|-----------|
-| 사업성 | 시장 규모·경쟁분석 일치도, 차별점 방어 가능성, 수익 모델 현실성 |
-| 리스크 | 핵심 리스크 식별 및 대응 방안, 외부 의존성 관리 |
-| 기술 | RN+Supabase 구현 가능성, 1인 개발 규모 적합성, DB·API 정합성 |
-| 문서 품질 | 목표-기능-기술 간 모순, 누락 섹션, KPI 측정 가능성 |
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-미달 항목은 **심각도(Critical/Major/Minor)**와 **유형(아이디어 결함/문서 결함)**으로 분류한다.
+## 기술 스택 제약
 
-| 판정 | 조건 | 액션 |
-|------|------|------|
-| 통과 | Critical/Major 없음 | 사용자 선택 (채택/회귀/보류/탈락) |
-| 3단계 회귀 | 문서 결함만 존재 | PRD 보완 후 재검증 |
-| 2단계 회귀 | 수정 가능한 아이디어 결함 | 사업성/기술 재평가 |
-| 탈락 | 근본적 아이디어 결함 | 사용자 선택 (탈락/보류) |
+채택된 PRD는 아래 스택으로 구현 가능해야 한다.
 
-**판정 결과 처리** (사용자 최종 선택에 따라):
-- **채택**: 관련 파일을 `ideas/adopted/`로 이동 → **Task Master 투입 가능 상태**
-- **탈락**: 사용자의 명시적 동의 후 `ideas/rejected/`로 이동, 탈락 사유 기록
-- **보류**: `ideas/` 루트에 유지, 재개 시 2단계부터 재시작
+| 레이어 | 기술 |
+|---|---|
+| 프레임워크 | Expo Managed Workflow (SDK 최신 안정 버전) |
+| 언어 | TypeScript (strict mode) |
+| 라우팅 | Expo Router (파일 기반) |
+| UI | React Native Paper |
+| 상태 관리 | Zustand |
+| 백엔드 | Supabase (PostgreSQL + Auth + Edge Functions + Storage) |
+| 로컬 KV | react-native-mmkv |
+| 로컬 DB | op-sqlite (조건부) |
+| 타겟 플랫폼 | iOS / Android |
 
-**산출물**: `ideas/NNN-아이디어명-review.md`
+### 제외 기준
 
-> **참고**: `ideas/adopted/`에 저장된 PRD는 Task Master 등 태스크 분해 도구에 투입하여 별도의 추가 설계 없이 즉시 개발 작업으로 분해할 수 있는 수준이다.
+- 법적 인허가 필수 또는 규제가 까다로운 영역
+- 기업/기관 협약 필수 아이디어
+- 1인 개발 구현 불가 아이디어
+- RN + Supabase 스택 부적합 아이디어
 
-## 문서 규칙
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-- 모든 문서는 **한국어**로 작성
-- 아이디어 문서는 `ideas/_template.md`를 기반으로 작성
-- 파일명 형식: `NNN-아이디어명.md` (예: `001-동네-소음-리포트.md`)
-- 탈락 아이디어도 반드시 판정 사유를 기록
+## 평가 기준
 
-## 외부 도구
+1. 1-3개월 내 MVP 출시 가능 여부
+2. 한국 로컬 시장의 실제 pain point
+3. 기존 스택으로 구현 가능한지
 
-| MCP 서버 | 용도 |
-|----------|------|
-| `naver-search` | 네이버 블로그, 뉴스, 카페, 쇼핑, 지식인 등 한국 시장 조사 |
-| `brave-search` | 글로벌 웹·뉴스 검색, 해외 트렌드 및 경쟁 앱 탐색 |
-| `fetch` | 앱 스토어 페이지, 랜딩페이지 등 URL 직접 확인 |
+### PRD 필수 포함 항목 (Task Master 투입 요건)
+
+- 기능 명세 (P0/P1/P2 우선순위)
+- 수용 기준 (AC-XX-X 형식)
+- DB 스키마 (CREATE TABLE SQL, RLS 정책)
+- API 설계 (엔드포인트, TypeScript 인터페이스)
+- 아키텍처 상세도 (시스템 구조도, 매핑표)
+- 화면 구조 / UI 명세
+- 오프라인/동기화 설계
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## 연관 프로젝트
+
+### project-init
+
+본 프로젝트에서 채택된 PRD는 [`project-init`](../project-init)의 입력이 된다. project-init은 PRD를 기반으로 Expo + Supabase 프로젝트를 자동 생성하고 초기화한다.
+
+```
+app-idea-lab (PRD 산출) → project-init (프로젝트 생성) → 실제 개발
+```
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
