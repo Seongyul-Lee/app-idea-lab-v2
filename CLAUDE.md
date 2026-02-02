@@ -10,8 +10,14 @@
 - 모든 문서는 한국어로 작성
 
 ## 기술 스택 제약
-- Expo Managed Workflow + React Native + TypeScript
-- Supabase (PostgreSQL)
+- **프레임워크**: Expo Managed Workflow (SDK 최신 안정 버전)
+- **언어**: TypeScript (strict mode)
+- **라우팅**: Expo Router (파일 기반)
+- **UI**: React Native Paper
+- **상태 관리**: Zustand
+- **백엔드**: Supabase (PostgreSQL + Auth + Edge Functions + Storage)
+- **로컬 KV**: react-native-mmkv (경량 키-값)
+- **로컬 DB (필요 시)**: op-sqlite (구조화 데이터, PRD에서 명시한 경우 조건부 설치)
 - 외부 파트너십 없이 혼자 구현 가능해야 함
 
 ## 타겟 플랫폼
@@ -61,8 +67,8 @@
 | app-idea-lab 섹션 | project-init 대응 섹션 | 비고 |
 |---|---|---|
 | 기술 스택 제약 | 기술 스택 (고정), 공통 의존성, 조건부 의존성 매핑 | 스택 추가/제거 시 의존성 목록도 갱신 |
-| 개발 환경 | 경로 상수 | OS, 빌드 환경 변경 시 |
-| 타겟 플랫폼 | — | 플랫폼 변경 시 scaffold 로직에 영향 |
+| 개발 환경 | 개발 환경, 경로 상수 | OS, 빌드 환경 변경 시 |
+| 타겟 플랫폼 | 타겟 플랫폼 | 플랫폼 변경 시 scaffold 로직에 영향 |
 | PRD의 최종 목표 / Task Master 투입 요건 | 생성할 CLAUDE.md 골격, 생성할 KNOWLEDGE.md 골격 | PRD 구조 변경 시 템플릿 갱신 |
 
 ## 판정 결과 처리
@@ -70,6 +76,9 @@
 
 ## 아이디어 문서 규칙
 - 템플릿: `ideas/_template.md`를 복사하여 작성
-- 파일명: `NNN-아이디어명.md` (예: `001-동네-소음-리포트.md`)
+- 파일명 규칙:
+  - 아이디어 카드: `NNN-아이디어명.md` (예: `009-복약케어.md`)
+  - PRD: `NNN-아이디어명-prd.md` (예: `009-복약케어-prd.md`)
+  - 리뷰: `NNN-아이디어명-review.md` (예: `009-복약케어-review.md`)
 - 채택 시 `ideas/adopted/`에, 탈락 시 `ideas/rejected/`에 이동
 - 탈락 아이디어도 반드시 판정 사유를 기록
