@@ -1,11 +1,14 @@
 # Stage 6: 성장 전략 (Growth Strategy)
 
+대상 아이디어: $ARGUMENTS
+
 출시 후 초기 유저 확보와 리텐션 극대화를 위한 실행 전략을 수립하고 실행한다. **출시 당일부터 시작**하며, 출시 후 12주를 3개 페이즈로 나누어 운영한다.
 
 ## 입력
 
-- `ideas/adopted/NNN-아이디어명-launch.md` (Stage 5 산출물)
-- `validation/NNN-아이디어명-validation.md` (Stage 1V 검증 데이터, 있을 경우)
+- `ideas/adopted/NNN-아이디어명-launch.md` — Stage 5 산출물
+- `ideas/adopted/NNN-아이디어명-prd.md` — PRD 문서 (기능/수익 모델 참조용)
+- `validation/NNN-아이디어명-validation.md` — Stage 1V 검증 데이터 (있을 경우)
 - 라이브 앱의 실제 지표 (설치수, DAU, 리텐션, 수익)
 
 ## 실행 절차

@@ -11,7 +11,8 @@
 - `ideas/NNN-아이디어명.md` — 평가 완료 아이디어 문서
 - `research/competitors/NNN-경쟁분석.md` — 2단계 경쟁사 분석
 - `research/market-data/NNN-시장분석.md` — 2단계 시장 분석
-- `research/market-data/NNN-트렌드메모.md` — 2단계 트렌드 분석
+- `research/market-data/NNN-트렌드메모.md` — 트렌드 분석
+- `validation/NNN-아이디어명-validation.md` — Stage 1V 시장 검증 카드 (있을 경우)
 
 ## 검증 프레임워크
 비판적 리뷰어 관점을 최우선으로 채택한다. 통과 근거를 찾기보다 결함 발견에 집중하라. PRD가 "왜 실패할 수 있는지"를 먼저 탐색한 뒤, 그럼에도 통과하는 항목만 통과로 판정한다.

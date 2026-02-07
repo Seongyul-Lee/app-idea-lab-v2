@@ -1,12 +1,15 @@
 # Stage 5: 출시 + ASO (Launch & App Store Optimization)
 
+대상 아이디어: $ARGUMENTS
+
 MVP 빌드 완료 후, 앱스토어 최적화와 출시 전략을 실행한다. 스토어 페이지는 앱의 "영업사원"이다 — 여기서 전환율이 결정된다.
 
 ## 입력
 
 - 스토어 제출 가능한 MVP 빌드
-- `ideas/adopted/NNN-아이디어명-prd.md` (기능/타겟 유저 참조용)
-- `validation/NNN-아이디어명-validation.md` (검증 데이터 참조용, 있을 경우)
+- `ideas/adopted/NNN-아이디어명-prd.md` — PRD 문서 (기능/타겟 유저 참조용)
+- `ideas/adopted/NNN-아이디어명.md` — 평가 완료 아이디어 문서
+- `validation/NNN-아이디어명-validation.md` — Stage 1V 검증 데이터 (있을 경우)
 
 ## 실행 절차
 

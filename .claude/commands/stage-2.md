@@ -9,6 +9,7 @@
 - `ideas/`에서 대상 아이디어 문서를 읽는다
 - `research/market-data/NNN-*.md` 파일이 있으면 참고한다 (NNN은 대상 아이디어 번호)
 - `research/competitors/NNN-*.md` 파일이 있으면 참고한다
+- `validation/NNN-아이디어명-validation.md` — Stage 1V 시장 검증 카드 (있을 경우)
 
 ## 사용 도구
 | 도구 | 역할 |
