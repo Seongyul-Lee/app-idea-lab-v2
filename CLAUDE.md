@@ -1,4 +1,4 @@
-# App Idea Lab
+# App Idea Lab v2
 
 ## 목적
 한국 시장 타겟 1인 개발 모바일 앱 아이디어 발굴 및 평가
@@ -59,10 +59,10 @@
 ## 연관 프로젝트: project-init
 
 ### 관계
-`~/project-init`은 본 프로젝트에서 채택(adopted)된 PRD 문서를 기반으로, 기술 스택에 맞는 프로젝트를 자동 생성·초기화하는 워크플로우 도구다. 즉, app-idea-lab의 **산출물(채택된 PRD)**이 project-init의 **입력**이 된다.
+`~/project-init-v2`은 본 프로젝트에서 채택(adopted)된 PRD 문서를 기반으로, 기술 스택에 맞는 프로젝트를 자동 생성·초기화하는 워크플로우 도구다. 즉, app-idea-lab-v2의 **산출물(채택된 PRD)**이 project-init-v2의 **입력**이 된다.
 
 ### 동기화 필수 항목
-아래 섹션이 변경되면 `~/project-init/CLAUDE.md`의 대응 섹션도 반드시 함께 수정해야 한다.
+아래 섹션이 변경되면 `~/project-init-v2/CLAUDE.md`의 대응 섹션도 반드시 함께 수정해야 한다.
 
 | app-idea-lab 섹션 | project-init 대응 섹션 | 비고 |
 |---|---|---|

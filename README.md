@@ -1,6 +1,6 @@
 <a id="readme-top"></a>
 
-# App Idea Lab
+# App Idea Lab v2
 
 한국 시장 타겟 1인 개발 모바일 앱 아이디어를 발굴하고, 평가하고, PRD로 정제하는 문서 기반 워크플로우 프로젝트.
 
@@ -85,8 +85,8 @@ app-idea-lab/
 ### 설치
 
 ```sh
-git clone <repo-url> ~/app-idea-lab
-cd ~/app-idea-lab
+git clone <repo-url> ~/app-idea-lab-v2
+cd ~/app-idea-lab-v2
 ```
 
 별도의 의존성 설치는 필요 없다. Claude Code 세션에서 슬래시 커맨드를 실행하면 된다.
@@ -158,12 +158,12 @@ Claude Code에서 프로젝트를 열고 슬래시 커맨드를 실행한다.
 
 ## 연관 프로젝트
 
-### project-init
+### project-init-v2
 
-본 프로젝트에서 채택된 PRD는 [`project-init`](../project-init)의 입력이 된다. project-init은 PRD를 기반으로 Expo + Supabase 프로젝트를 자동 생성하고 초기화한다.
+본 프로젝트에서 채택된 PRD는 [`project-init-v2`](../project-init-v2)의 입력이 된다. project-init-v2은 PRD를 기반으로 Expo + Supabase 프로젝트를 자동 생성하고 초기화한다.
 
 ```
-app-idea-lab (PRD 산출) → project-init (프로젝트 생성) → 실제 개발
+app-idea-lab-v2 (PRD 산출) → project-init-v2 (프로젝트 생성) → 실제 개발
 ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
