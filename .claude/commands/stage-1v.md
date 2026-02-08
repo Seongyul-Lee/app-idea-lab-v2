@@ -13,7 +13,8 @@ Stage 1 (발굴) → **Stage 1V (검증)** → Stage 2 (사업성 평가)
 ## 입력
 
 - `ideas/`에서 대상 아이디어 문서를 읽는다 (`$ARGUMENTS`로 지정된 `NNN-아이디어명`)
-- `research/market-data/NNN-트렌드메모.md` — Stage 1 트렌드 분석 (있을 경우)
+- `research/market-data/NNN-*.md` — 해당 아이디어의 시장 리서치 문서 (있을 경우)
+- `research/competitors/NNN-*.md` — 해당 아이디어의 경쟁 분석 문서 (있을 경우)
 
 ## 실행 절차
 
