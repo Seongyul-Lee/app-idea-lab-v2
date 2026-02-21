@@ -188,3 +188,15 @@ app-idea-lab-v2/
   - 성장 산출물 → `growth/`
   - 월간 리뷰 → `evaluation/`
 - 탈락 아이디어도 반드시 판정 사유를 기록
+
+### YAML Frontmatter
+
+모든 아이디어 관련 문서(아이디어 카드, 검증 보고서, PRD, 리뷰)는 파일 최상단에 YAML frontmatter를 포함한다.
+
+- 아이디어 카드: `status`, `current_stage`, `validation`, `evaluation`, `review`, `rejection` 필드
+- 검증 보고서: `score`, `verdict`, `date` 필드
+- PRD: `version`, `date` 필드
+- 리뷰: `verdict`, `final_decision`, `critical_count`, `major_count`, `minor_count` 필드
+
+각 Stage 커맨드는 완료 시 해당 문서의 frontmatter를 자동 업데이트한다.
+Frontmatter의 `status` 필드는 아이디어 카드(`NNN-아이디어명.md`)에만 존재하며, 이 파일이 해당 아이디어의 메타데이터 SSOT(Single Source of Truth)이다.

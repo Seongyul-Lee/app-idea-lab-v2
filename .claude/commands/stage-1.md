@@ -101,6 +101,18 @@ $ARGUMENTS
 | 아이디어 초안 | `ideas/NNN-아이디어명.md` (평가 점수 미기입) | 항상 |
 | 트렌드 메모 | `research/market-data/NNN-트렌드메모명.md` | $ARGUMENTS 없이 트렌드 분석을 수행한 경우에만 |
 
+## Frontmatter 초기화
+
+생성한 아이디어 카드(`ideas/NNN-아이디어명.md`)의 YAML frontmatter를 `ideas/_template.md` 기반으로 채운다.
+
+- `id`: 아이디어 번호 (예: `"009"`)
+- `name`: 아이디어명
+- `status`: `"in-progress"`
+- `current_stage`: `"stage-1"`
+- `created_at`: 오늘 날짜
+- `updated_at`: 오늘 날짜
+- 나머지 필드는 `null` 유지
+
 ## 전환
 - 초안 완료, 제외 기준 미해당 → 사용자에게 "2단계: `/stage-2 NNN-아이디어명`" 안내
 - 제외 기준 해당 → 폐기 후 새 아이디어 발굴

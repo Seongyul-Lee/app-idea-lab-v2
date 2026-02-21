@@ -1,3 +1,15 @@
+---
+id: "005"
+name: "절약챌린지"
+type: "review"
+verdict: "pass"
+final_decision: "rejected"
+critical_count: 0
+major_count: 0
+minor_count: 0
+date: "2026-02-02"
+---
+
 # 005-절약챌린지 PRD 정합성 판별 보고서
 
 > **판별일**: 2026-02-02 (2차 검증)

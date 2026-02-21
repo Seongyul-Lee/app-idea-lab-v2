@@ -71,6 +71,25 @@ Stage 1 산출물에서 아이디어명, 타겟 유저, 핵심 pain point를 추
 |------|------|
 | 시장 검증 카드 | `validation/NNN-아이디어명-validation.md` |
 
+## Frontmatter 업데이트
+
+산출물 작성 및 판정 완료 후 아래 2개 파일의 frontmatter를 채운다.
+
+1. **검증 보고서** (`validation/NNN-아이디어명-validation.md`):
+   - `id`, `name`: 해당 값
+   - `score`: 합산 점수 (0~100)
+   - `verdict`: 판정 결과 (`"GO"` | `"CONDITIONAL"` | `"NO-GO"`)
+   - `date`: 오늘 날짜
+
+2. **아이디어 카드** (`ideas/NNN-아이디어명.md` 또는 적절한 위치의 아이디어 카드):
+   - `current_stage`: `"stage-1v"`
+   - `updated_at`: 오늘 날짜
+   - `validation.score`: 합산 점수
+   - `validation.verdict`: 판정 결과
+   - `validation.date`: 오늘 날짜
+   - `validation.subscores`: 4개 항목별 점수 (`search_demand`, `community_pain`, `competitor_gap`, `user_scale`)
+   - NO-GO 판정 시: `status`를 `"rejected"`로, `rejection.stage`를 `"stage-1v"`, `rejection.reason`에 사유 기록
+
 ## 판정별 다음 액션
 
 | 판정 | 다음 단계 |

@@ -1,3 +1,14 @@
+---
+id: "009"
+name: "복약케어"
+type: "review"
+verdict: "pass"
+final_decision: "adopted"
+critical_count: 0
+major_count: 0
+minor_count: 0
+date: "2026-02-02"
+---
 # 009-복약케어 PRD 정합성 판별 보고서
 
 > **검증 일자**: 2026-02-02
