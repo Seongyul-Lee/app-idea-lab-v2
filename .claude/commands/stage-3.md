@@ -118,6 +118,7 @@ PRD가 아래 기술을 필요로 하는 경우, **이 테이블에 있는 기�
 
 | 영역 | 사용 가능한 기술 |
 |---|---|
+| 로컬 DB / 오프라인 | op-sqlite |
 | 인증 | Kakao OAuth, Google OAuth, Apple Auth, Naver OAuth |
 | 알림 | expo-notifications (Push Notification) |
 | 분석 | Firebase Analytics, Aptabase |
