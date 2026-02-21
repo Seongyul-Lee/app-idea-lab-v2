@@ -57,6 +57,12 @@ Stage 1         Stage 1V        Stage 2         Stage 3         Stage 4
 - 탈락 → `ideas/rejected/` (사유 기록 필수)
 - 탈락 처리는 반드시 사용자의 명시적 동의를 받은 후에만 실행
 
+### 유틸리티 커맨드
+
+| 커맨드 | 설명 | 비고 |
+|--------|------|------|
+| `/sync-check` | app-idea-lab-v2 ↔ project-init-v2 CLAUDE.md 동기화 검증 | project-init-v2를 source of truth로 단방향 비교 |
+
 ## 문서 작성 언어
 - 모든 문서는 한국어로 작성
 
@@ -120,7 +126,8 @@ app-idea-lab-v2/
 │       ├── stage-4.md         # PRD 정합성 검증
 │       ├── stage-5.md         # 출시 + ASO (MVP 개발 완료 후)
 │       ├── stage-6.md         # 성장 전략 (출시 후)
-│       └── monthly-review.md  # 월간 포트폴리오 리뷰
+│       ├── monthly-review.md  # 월간 포트폴리오 리뷰
+│       └── sync-check.md     # CLAUDE.md 동기화 검증
 ├── ideas/
 │   ├── _template.md           # 아이디어 카드 템플릿
 │   ├── adopted/               # 채택된 아이디어 + PRD + 리뷰
