@@ -1,8 +1,13 @@
-# NNN-아이디어명 시장 검증 카드
+---
+id: "NNN"
+name: "아이디어명"
+type: "validation"
+score: null           # 0~100
+verdict: null         # GO | CONDITIONAL | NO-GO
+date: "YYYY-MM-DD"
+---
 
-> 작성일: YYYY-MM-DD
-> 상태: `GO` / `CONDITIONAL` / `NO-GO`
-> 점수: XX / 100
+# NNN-아이디어명 시장 검증 카드
 
 ---
 
@@ -61,9 +66,9 @@
 
 ### 공통 pain point 요약
 
-1. 
-2. 
-3. 
+1.
+2.
+3.
 
 ### 판단 근거
 

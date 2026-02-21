@@ -118,6 +118,7 @@ PRD가 아래 기술을 필요로 하는 경우, **이 테이블에 있는 기�
 
 | 영역 | 사용 가능한 기술 |
 |---|---|
+| 로컬 DB / 오프라인 | op-sqlite |
 | 인증 | Kakao OAuth, Google OAuth, Apple Auth, Naver OAuth |
 | 알림 | expo-notifications (Push Notification) |
 | 분석 | Firebase Analytics, Aptabase |
@@ -163,6 +164,20 @@ PRD 초안 완성 후, 아래 항목을 **모두** 대조 확인한다. 미충�
 | PRD 문서 | `ideas/NNN-아이디어명-prd.md` |
 
 > **이 단계의 산출물은 위 PRD 파일 1개뿐이다. Technical Architecture를 포함한 모든 내용은 PRD 문서 내 해당 섹션에 작성하며, 별도 파일을 생성하지 않는다.**
+
+## Frontmatter 업데이트
+
+PRD 작성 완료 후 아래 2개 파일의 frontmatter를 채운다.
+
+1. **PRD** (`ideas/NNN-아이디어명-prd.md`):
+   - `id`, `name`: 해당 값
+   - `type`: `"prd"`
+   - `version`: `"v1.0"` (회귀로 인한 재작성 시 버전 증가 — 예: `"v1.1"`, `"v2.0"`)
+   - `date`: 오늘 날짜
+
+2. **아이디어 카드** (`ideas/NNN-아이디어명.md`):
+   - `current_stage`: `"stage-3"`
+   - `updated_at`: 오늘 날짜
 
 ## 전환
 - PRD 전체 섹션 작성 완료, 사용자 확인 → "4단계: `/stage-4 NNN-아이디어명`" 안내

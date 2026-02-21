@@ -1,3 +1,15 @@
+---
+id: "001"
+name: "데일리셀프"
+type: "review"
+verdict: "pass"
+final_decision: "adopted"
+critical_count: 0
+major_count: 0
+minor_count: 0
+date: "2026-02-02"
+---
+
 # 데일리셀프 (DailySelf) — 4단계 정합성 판별 리뷰
 
 > 판별일: 2026-02-02

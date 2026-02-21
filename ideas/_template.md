@@ -1,3 +1,51 @@
+---
+# 이 frontmatter는 각 Stage 커맨드가 자동으로 업데이트합니다
+id: "NNN"
+name: "아이디어명"
+status: "in-progress"         # in-progress | adopted | rejected
+current_stage: "stage-1"     # stage-1 | stage-1v | stage-2 | stage-3 | stage-4 | stage-5 | stage-6
+created_at: "YYYY-MM-DD"
+updated_at: "YYYY-MM-DD"
+
+validation:
+  score: null
+  verdict: null               # GO | CONDITIONAL | NO-GO
+  date: null
+  subscores:
+    search_demand: null        # 0~25
+    community_pain: null       # 0~30
+    competitor_gap: null       # 0~25
+    user_scale: null           # 0~20
+
+evaluation:
+  score: null                  # 0~30
+  date: null
+  subscores:
+    mvp_feasibility: null      # 1~5
+    pain_point_clarity: null   # 1~5
+    tech_stack_fit: null       # 1~5
+    market_size: null          # 1~5
+    competition: null          # 1~5
+    monetization: null         # 1~5
+
+review:
+  verdict: null                # pass | regression-3 | regression-2 | reject
+  final_decision: null         # adopted | rejected
+  date: null
+  critical_count: null
+  major_count: null
+  minor_count: null
+  areas:
+    business: null             # pass | fail
+    risk: null                 # pass | fail
+    technical: null            # pass | fail
+    documentation: null        # pass | fail
+
+rejection:
+  stage: null                  # stage-1v | stage-2 | stage-4
+  reason: null
+---
+
 # [아이디어 이름]
 
 ## 한줄 요약

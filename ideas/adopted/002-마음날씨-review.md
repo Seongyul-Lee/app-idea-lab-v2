@@ -1,3 +1,15 @@
+---
+id: "002"
+name: "마음날씨"
+type: "review"
+verdict: "pass"
+final_decision: "adopted"
+critical_count: 0
+major_count: 0
+minor_count: 0
+date: "2026-02-02"
+---
+
 # 002-마음날씨 PRD 정합성 판별 보고서
 
 > 판별일: 2026-02-02

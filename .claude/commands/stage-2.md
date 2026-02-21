@@ -110,6 +110,17 @@
 | 경쟁사 분석 | `research/competitors/NNN-경쟁분석.md` |
 | 시장 분석 | `research/market-data/NNN-시장분석.md` |
 
+## Frontmatter 업데이트
+
+평가 점수 산정 완료 후 아이디어 카드(`ideas/NNN-아이디어명.md`)의 frontmatter를 업데이트한다.
+
+- `current_stage`: `"stage-2"`
+- `updated_at`: 오늘 날짜
+- `evaluation.score`: 총점 (0~30)
+- `evaluation.date`: 오늘 날짜
+- `evaluation.subscores`: 6개 항목별 점수 (1~5) — `mvp_feasibility`, `pain_point_clarity`, `tech_stack_fit`, `market_size`, `competition`, `monetization`
+- 탈락 판정 시: `status`를 `"rejected"`로, `rejection.stage`를 `"stage-2"`, `rejection.reason`에 사유 기록
+
 ## 전환
 - 24-30점 채택 → "3단계: `/stage-3 NNN-아이디어명`" 안내
 - 18-23점 보류 → 미달 항목 보고 후 사용자 판단 요청 (추가 조사 / 피벗 / 탈락 / 예외 채택)

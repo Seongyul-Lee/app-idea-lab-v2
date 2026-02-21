@@ -1,3 +1,14 @@
+---
+id: "003"
+name: "살았니"
+type: "review"
+verdict: "pass"
+final_decision: "adopted"
+critical_count: 0
+major_count: 0
+minor_count: 0
+date: "2026-02-02"
+---
 # 003-살았니 (SafePin) — 4단계 PRD 정합성 판별 보고서 (v6)
 
 > 검증일: 2026-02-02
